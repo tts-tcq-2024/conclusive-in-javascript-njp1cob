@@ -20,3 +20,7 @@ function classifyTemperatureBreach(coolingType, temperatureInC) {
  const { lowerLimit, upperLimit } = coolingLimits[coolingType] || {};
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
+
+
+module.exports =
+    {inferBreach, classifyTemperatureBreach};
