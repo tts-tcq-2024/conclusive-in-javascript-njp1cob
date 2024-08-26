@@ -1,5 +1,6 @@
 const alerts = require('../src/typewisealert');
 const {expect} = require('chai');
+const sinon = require('sinon');
 
 it('infers a value lower than the minimum as TOO_LOW', () => {
   expect(alerts.inferBreach(20, 50, 100)).equals('TOO_LOW');
@@ -26,3 +27,11 @@ it('infers a boundary value with low value', () => {
 it('infers a boundary value with high value', () => {
   expect(alerts.inferBreach(50, 0, 50)).equals('NORMAL');
 });
+
+  it('should send TOO_HIGH breach alert via email', () => {
+      const emailSpy = sinon.spy(console, 'log');
+      const batteryChar = { coolingType: 'HI_ACTIVE_COOLING' };
+      checkAndAlert('TO_EMAIL', batteryChar, 50);
+      expect(emailSpy.calledWith('To: a.b@c.com')).to.be.true;
+      expect(emailSpy.calledWith('Hi, the temperature is too high')).to.be.true;
+    });
