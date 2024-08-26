@@ -1,4 +1,4 @@
-const { batteryTypeVal, temperaTureInc } = require('./typewisealert');
+// const { batteryTypeVal, temperaTureInc } = require('./typewisealert');
 function inferBreach(value, lowerLimit, upperLimit) {
   if (value < lowerLimit) {
     return 'TOO_LOW';
@@ -9,7 +9,7 @@ function inferBreach(value, lowerLimit, upperLimit) {
   return 'NORMAL';
 }
 
-function classifyTemperatureBreach(batteryTypeVal, temperaTureInc) {
+function classifyTemperatureBreach(coolingType, temperaTureInc) {
  
   
    const coolingLimits = {
@@ -17,7 +17,7 @@ function classifyTemperatureBreach(batteryTypeVal, temperaTureInc) {
         'HI_ACTIVE_COOLING': { lowerLimit: 0, upperLimit: 45 },
         'MED_ACTIVE_COOLING': { lowerLimit: 0, upperLimit: 40 }
     };
- const { lowerLimit, upperLimit } = coolingLimits[batteryTypeVal] || {};
+ const { lowerLimit, upperLimit } = coolingLimits[coolingType] || {};
   return inferBreach(temperaTureInc, lowerLimit, upperLimit);
 }
 
