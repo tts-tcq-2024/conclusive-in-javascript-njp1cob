@@ -1,4 +1,5 @@
 const alerts = require('../src/typewisealert');
+const checkBreach = require('../src/breachClassification');
 const {expect} = require('chai');
 const sinon = require('sinon');
 
@@ -31,7 +32,7 @@ it('infers a boundary value with high value', () => {
   it('should send TOO_HIGH breach alert via email', () => {
       const emailSpy = sinon.spy(console, 'log');
       const batteryChar = { coolingType: 'HI_ACTIVE_COOLING' };
-      checkAndAlert('TO_EMAIL', batteryChar, 50);
+      alerts.checkAndAlert('TO_EMAIL', batteryChar, 50);
       expect(emailSpy.calledWith('To: a.b@c.com')).to.be.true;
       expect(emailSpy.calledWith('Hi, the temperature is too high')).to.be.true;
     });
