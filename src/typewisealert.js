@@ -1,10 +1,10 @@
 const { inferBreach, classifyTemperatureBreach } = require('./breachClassification');
 
-batteryTypeVal: any;
-temperaTureInc: any;
+const batteryTypeVal;
+const temperaTureInc;
 function checkAndAlert(alertTarget, batteryChar, temperatureInC) {
-  this.batteryTypeVal = batteryChar['coolingType'];
-  this.temperatureinc = temperatureInC;
+  batteryTypeVal = batteryChar['coolingType'];
+ temperaTureInc = temperatureInC;
   const breachType = classifyTemperatureBreach(batteryChar['coolingType'], temperatureInC);
   if (alertTarget == 'TO_CONTROLLER') {
     sendToController(breachType);
