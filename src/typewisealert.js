@@ -11,15 +11,14 @@ function inferBreach(value, lowerLimit, upperLimit) {
 }
 
 function classifyTemperatureBreach(coolingType, temperatureInC) {
-  let lowerLimit = 0;
-  let upperLimit = 0;
+ 
   
    const coolingLimits = {
         'PASSIVE_COOLING': { lowerLimit: 0, upperLimit: 35 },
         'HI_ACTIVE_COOLING': { lowerLimit: 0, upperLimit: 45 },
         'MED_ACTIVE_COOLING': { lowerLimit: 0, upperLimit: 40 }
     };
-   { lowerLimit, upperLimit } = coolingLimits[coolingType] || {};
+ const { lowerLimit, upperLimit } = coolingLimits[coolingType] || {};
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
 
