@@ -18,7 +18,7 @@ function classifyTemperatureBreach(batteryTypeVal, temperaTureInc) {
         'MED_ACTIVE_COOLING': { lowerLimit: 0, upperLimit: 40 }
     };
  const { lowerLimit, upperLimit } = coolingLimits[batteryTypeVal] || {};
-  return inferBreach(temperatureInC, lowerLimit, upperLimit);
+  return inferBreach(temperaTureInc, lowerLimit, upperLimit);
 }
 
 
