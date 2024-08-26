@@ -28,4 +28,4 @@ function sendToEmail(breachType) {
 }
 
 module.exports =
-    {inferBreach, classifyTemperatureBreach, checkAndAlert, sendToController, sendToEmail, batteryTypeVal, temperaTureInc};
+    {inferBreach, classifyTemperatureBreach, checkAndAlert, sendToController, sendToEmail};
