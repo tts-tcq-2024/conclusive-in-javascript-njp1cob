@@ -1,5 +1,5 @@
 const alerts = require('../src/typewisealert');
-const checkBreach = require('../src/breachClassification');
+
 const {expect} = require('chai');
 const sinon = require('sinon');
 
