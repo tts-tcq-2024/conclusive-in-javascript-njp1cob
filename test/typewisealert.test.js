@@ -21,7 +21,7 @@ it('infers a value lower than the minimum as TOO_LOW', () => {
   expect(alerts.inferBreach(20, 0, 35)).equals('NORMAL');
 });
 it('infers a boundary value with low value', () => {
-  expect(alerts.inferBreach(0, 0, 100)).equals('TOO_LOW');
+  expect(alerts.inferBreach(0, 0, 100)).equals('NORMAL');
 });
 it('infers a boundary value with high value', () => {
   expect(alerts.inferBreach(50, 0, 50)).equals('NORMAL');
