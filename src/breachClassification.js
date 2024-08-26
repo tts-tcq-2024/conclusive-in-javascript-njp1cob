@@ -1,4 +1,4 @@
-const { batteryTypeVal, temperaTureInc } = require('./getColorFromPairs');
+const { batteryTypeVal, temperaTureInc } = require('./typewisealert');
 function inferBreach(value, lowerLimit, upperLimit) {
   if (value < lowerLimit) {
     return 'TOO_LOW';
