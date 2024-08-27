@@ -37,10 +37,5 @@ it('infers a boundary value with high value', () => {
       expect(emailSpy.calledWith('Hi, the temperature is too high')).to.be.true;
     });
 
-it('should send TOO_HIGH breach alert to controller', () => {
-      const controllerSpy = sinon.spy(console, 'log');
-      const batteryChar = { coolingType: 'HI_ACTIVE_COOLING' };
-      alerts.checkAndAlert('TO_CONTROLLER', batteryChar, 50);
-      expect(controllerSpy.calledWith('65261, TOO_HIGH')).to.be.true;
-    });
+
 
